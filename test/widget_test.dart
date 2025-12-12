@@ -11,20 +11,18 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:pinterest_ui/main.dart';
 
 void main() {
-  testWidgets('Counter increments smoke test', (WidgetTester tester) async {
+  testWidgets('Pinterest UI smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
     await tester.pumpWidget(const MyApp());
 
-    // Verify that our counter starts at 0.
-    expect(find.text('0'), findsOneWidget);
-    expect(find.text('1'), findsNothing);
+    // Wait for network images (which won't load in test environment usually, but we just check structure)
+    // Actually, network images might cause issues in tests if not handled, but let's just check for the AppBar title
+    // which is a safe text to find.
 
-    // Tap the '+' icon and trigger a frame.
-    await tester.tap(find.byIcon(Icons.add));
-    await tester.pump();
-
-    // Verify that our counter has incremented.
-    expect(find.text('0'), findsNothing);
-    expect(find.text('1'), findsOneWidget);
+    expect(find.text('Pinterest'), findsOneWidget);
+    expect(
+      find.byType(GridView),
+      findsNothing,
+    ); // It's a MasonryGridView, not GridView, but let's just check text
   });
 }

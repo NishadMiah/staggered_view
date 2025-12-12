@@ -36,4 +36,8 @@ class AppColors {
   static const Color lightBlue = Color(0xff007AFF);
   static const Color blue = Color(0xff0054A5);
   static const Color orange = Color(0xffFF9800);
+  static const Color containerColor = Color(0xffF0F0F0); // Added missing color
+  static const Color fillColor = Color(0xffF0F0F0);
+  static const Color containerBorder = Color(0xffE5E5E5);
+  static const Color textFormFieldBorder = Color(0xffE5E5E5);
 }

@@ -1,11 +1,5 @@
- 
-import 'package:get/get.dart';
- 
-
-class AppRoutes {
- 
-
-  static List<GetPage> routes = [
- 
-  ];
+class AppRoute {
+  static const String homeScreen = "/home";
+  static const String notificationScreen = "/notification";
+  static const String homeDetailsScreen = "/homeDetails";
 }
